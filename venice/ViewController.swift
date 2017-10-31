@@ -7,8 +7,31 @@
 //
 
 import UIKit
+import LocalAuthentication
 
 class ViewController: UIViewController {
+    
+    @IBAction func TouchIdButtomPressed(sender: AnyObject) {
+        
+        let context = LAContext()
+        var error :NSError?
+        let localizedReason = "認証したいから認証するよ"
+        
+        if context.canEvaluatePolicy(.deviceOwnerAuthenticationWithBiometrics, error: &error) {
+            context.evaluatePolicy(.deviceOwnerAuthenticationWithBiometrics, localizedReason: localizedReason, reply: { success, error in
+                
+                if success {
+                    print("認証成功")
+                } else {
+                    print("認証失敗: " + error!.localizedDescription)
+                }
+                
+            })
+        } else {
+            print("TouchID非対応")
+        }
+        
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
