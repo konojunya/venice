@@ -12,13 +12,29 @@ class PasswordListViewController: UIViewController, UITableViewDelegate, UITable
     
     @IBOutlet weak var tableView: UITableView?;
     
-    let items = [["hoge","hoge"],["huga","huga"]];
+    let items = [
+        [
+            "serviceName": "LINE",
+            "id": "konojunya"
+        ],
+        [
+            "serviceName": "Twitter",
+            "id": "konojunya"
+        ],
+        [
+            "serviceName": "Facebook",
+            "id": "junya.developer"
+        ],
+    ];
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         self.tableView?.delegate = self
         self.tableView?.dataSource = self
+        
+        self.tableView?.estimatedRowHeight = 80
+        self.tableView?.rowHeight = UITableViewAutomaticDimension
     }
     
     override func didReceiveMemoryWarning() {
@@ -37,7 +53,8 @@ class PasswordListViewController: UIViewController, UITableViewDelegate, UITable
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell") as! PasswordlistTableViewCell
         
-        cell.set(serviceName: self.items[indexPath.row][0], id: self.items[indexPath.row][1])
+        cell.set(serviceName: self.items[indexPath.row]["serviceName"]!, id: self.items[indexPath.row]["id"]!)
+        cell.layoutIfNeeded()
         
         return cell
         

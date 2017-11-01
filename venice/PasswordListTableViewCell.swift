@@ -10,12 +10,12 @@ import UIKit
 
 class PasswordlistTableViewCell: UITableViewCell{
     
-    @IBOutlet weak var serviceName: String!
-    @IBOutlet weak var id: String!
+    @IBOutlet weak var serviceName: UILabel!
+    @IBOutlet weak var id: UILabel!
     
     func set(serviceName: String, id: String ) {
-        self.serviceName = serviceName
-        self.id = id
+        self.serviceName.text = serviceName
+        self.id.text = id
     }
     
 }
