@@ -1,2 +1,2 @@
 # venice
-venice is password manager application.
+venice is password management application.
