@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9A2332F81FA9A3C700835A07 /* PasswordListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A2332F71FA9A3C700835A07 /* PasswordListViewController.swift */; };
+		9A2332FA1FA9A54E00835A07 /* PasswordListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A2332F91FA9A54E00835A07 /* PasswordListTableViewCell.swift */; };
 		9A4A434E1FA8C40100650985 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A4A434D1FA8C40100650985 /* AppDelegate.swift */; };
 		9A4A43501FA8C40100650985 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A4A434F1FA8C40100650985 /* ViewController.swift */; };
 		9A4A43531FA8C40100650985 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9A4A43511FA8C40100650985 /* Main.storyboard */; };
@@ -15,6 +17,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		9A2332F71FA9A3C700835A07 /* PasswordListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordListViewController.swift; sourceTree = "<group>"; };
+		9A2332F91FA9A54E00835A07 /* PasswordListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordListTableViewCell.swift; sourceTree = "<group>"; };
 		9A4A434A1FA8C40100650985 /* venice.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = venice.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9A4A434D1FA8C40100650985 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9A4A434F1FA8C40100650985 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -56,6 +60,8 @@
 			children = (
 				9A4A434D1FA8C40100650985 /* AppDelegate.swift */,
 				9A4A434F1FA8C40100650985 /* ViewController.swift */,
+				9A2332F71FA9A3C700835A07 /* PasswordListViewController.swift */,
+				9A2332F91FA9A54E00835A07 /* PasswordListTableViewCell.swift */,
 				9A4A43511FA8C40100650985 /* Main.storyboard */,
 				9A4A43541FA8C40100650985 /* Assets.xcassets */,
 				9A4A43561FA8C40100650985 /* LaunchScreen.storyboard */,
@@ -136,6 +142,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9A2332FA1FA9A54E00835A07 /* PasswordListTableViewCell.swift in Sources */,
+				9A2332F81FA9A3C700835A07 /* PasswordListViewController.swift in Sources */,
 				9A4A43501FA8C40100650985 /* ViewController.swift in Sources */,
 				9A4A434E1FA8C40100650985 /* AppDelegate.swift in Sources */,
 			);
@@ -277,6 +285,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = RH75B2UCHQ;
 				INFOPLIST_FILE = venice/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = konojunya.venice;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -292,6 +301,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = RH75B2UCHQ;
 				INFOPLIST_FILE = venice/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = konojunya.venice;
 				PRODUCT_NAME = "$(TARGET_NAME)";

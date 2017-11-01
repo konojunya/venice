@@ -10,37 +10,52 @@ import UIKit
 import LocalAuthentication
 
 class ViewController: UIViewController {
+    @IBOutlet weak var titleLabel: UILabel!
     
-    @IBAction func TouchIdButtomPressed(sender: AnyObject) {
+    override func viewDidLoad() {
+        super.viewDidLoad()
         
+        self.authTouchId()
+    }
+
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+    }
+    
+    func authTouchId() {
         let context = LAContext()
         var error :NSError?
-        let localizedReason = "認証したいから認証するよ"
+        let localizedReason = "VENICEのロック解除"
         
         if context.canEvaluatePolicy(.deviceOwnerAuthenticationWithBiometrics, error: &error) {
             context.evaluatePolicy(.deviceOwnerAuthenticationWithBiometrics, localizedReason: localizedReason, reply: { success, error in
                 
                 if success {
-                    print("認証成功")
+                    self.performSegue(withIdentifier: "showMainView", sender: nil)
                 } else {
-                    print("認証失敗: " + error!.localizedDescription)
+                    let alert = UIAlertController(title: "認証エラー", message: "認証に失敗しました。", preferredStyle: .alert)
+                    let defaultAction: UIAlertAction = UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler:{
+                        (action: UIAlertAction!) -> Void in
+                        print("OK")
+                    })
+                    
+                    alert.addAction(defaultAction)
+                    
+                    self.present(alert, animated: true, completion: nil)
                 }
                 
             })
         } else {
-            print("TouchID非対応")
+            let alert = UIAlertController(title: "TouchIDに対応していません。", message: "TouchIDに対応したiPhoneを使ってください。", preferredStyle: .alert)
+            let defaultAction: UIAlertAction = UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler:{
+                (action: UIAlertAction!) -> Void in
+                print("OK")
+            })
+            
+            alert.addAction(defaultAction)
+            
+            present(alert, animated: true, completion: nil)
         }
-        
-    }
-
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
-    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
 
 
